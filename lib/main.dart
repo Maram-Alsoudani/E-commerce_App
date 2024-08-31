@@ -2,8 +2,11 @@ import 'package:e_commerce_app/core/routes_manager/route_generator.dart';
 import 'package:flutter/material.dart';
 
 import 'core/routes_manager/routes.dart';
+import 'di/di.dart';
 
 void main() {
+  configureDependencies();
+
   runApp(const MyApp());
 }
 

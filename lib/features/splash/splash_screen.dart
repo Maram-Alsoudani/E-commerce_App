@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:e_commerce_app/core/resources/assets_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/routes_manager/routes.dart';
@@ -19,7 +18,7 @@ class SplashScreen extends StatelessWidget {
         ImageAsset.splash,
         width: double.infinity,
         height: double.infinity,
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
       ),
     );
   }
