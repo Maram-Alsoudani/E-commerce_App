@@ -1,6 +1,9 @@
 import 'package:e_commerce_app/core/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
+import '../resources/font_manager.dart';
+import '../resources/style_manager.dart';
+
 class CustomTextFormField extends StatefulWidget {
   final String hint;
   final TextEditingController controller;
@@ -32,7 +35,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(color: ColorManager.darkGrey, fontSize: 15),
+      style: getTextStyle(
+        18.0,
+        FontWeightManager.light,
+        ColorManager.black,
+      ),
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       validator: widget.validator,
