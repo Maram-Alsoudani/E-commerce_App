@@ -9,6 +9,8 @@ import 'package:e_commerce_app/features/sign_up/sign_up_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../core/resources/font_manager.dart';
+import '../../core/resources/style_manager.dart';
 import '../../di/di.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -55,12 +57,15 @@ class SignUpScreen extends StatelessWidget {
                     ),
 
                     //full name
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Full Name",
-                        style:
-                            TextStyle(color: ColorManager.white, fontSize: 15),
+                        style: getTextStyle(
+                          18.0,
+                          FontWeightManager.medium,
+                          ColorManager.white,
+                        ),
                       ),
                     ),
                     CustomTextFormField(
@@ -69,12 +74,15 @@ class SignUpScreen extends StatelessWidget {
                         controller: signUpViewModel.nameController),
 
                     //mobile number
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Mobile Number",
-                        style:
-                            TextStyle(color: ColorManager.white, fontSize: 15),
+                        style: getTextStyle(
+                          18.0,
+                          FontWeightManager.medium,
+                          ColorManager.white,
+                        ),
                       ),
                     ),
                     CustomTextFormField(
@@ -86,12 +94,15 @@ class SignUpScreen extends StatelessWidget {
                     ),
 
                     //emial
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "E-mail address",
-                        style:
-                            TextStyle(color: ColorManager.white, fontSize: 15),
+                        style: getTextStyle(
+                          18.0,
+                          FontWeightManager.medium,
+                          ColorManager.white,
+                        ),
                       ),
                     ),
                     CustomTextFormField(
@@ -102,12 +113,15 @@ class SignUpScreen extends StatelessWidget {
                     ),
 
                     //password
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Password",
-                        style:
-                            TextStyle(color: ColorManager.white, fontSize: 15),
+                        style: getTextStyle(
+                          18.0,
+                          FontWeightManager.medium,
+                          ColorManager.white,
+                        ),
                       ),
                     ),
                     CustomTextFormField(
@@ -118,12 +132,15 @@ class SignUpScreen extends StatelessWidget {
                     ),
 
                     //confirm password
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Confirm Password",
-                        style:
-                            TextStyle(color: ColorManager.white, fontSize: 15),
+                        style: getTextStyle(
+                          18.0,
+                          FontWeightManager.medium,
+                          ColorManager.white,
+                        ),
                       ),
                     ),
                     CustomTextFormField(
