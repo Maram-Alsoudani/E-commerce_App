@@ -4,14 +4,14 @@ import 'package:e_commerce_app/core/widgets/DialogUtils.dart';
 import 'package:e_commerce_app/core/widgets/custom_elevated_button.dart';
 import 'package:e_commerce_app/core/widgets/custom_text_form_field.dart';
 import 'package:e_commerce_app/core/widgets/validators/app_validators.dart';
-import 'package:e_commerce_app/features/sign_up/sign_up_cubit.dart';
-import 'package:e_commerce_app/features/sign_up/sign_up_states.dart';
+import 'package:e_commerce_app/features/auth/sign_up/sign_up_cubit/sign_up_cubit.dart';
+import 'package:e_commerce_app/features/auth/sign_up/sign_up_cubit/sign_up_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/resources/font_manager.dart';
-import '../../core/resources/style_manager.dart';
-import '../../di/di.dart';
+import '../../../core/resources/font_manager.dart';
+import '../../../core/resources/style_manager.dart';
+import '../../../di/di.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpViewModel signUpViewModel = getIt<SignUpViewModel>();
@@ -34,6 +34,7 @@ class SignUpScreen extends StatelessWidget {
           DialogUtils.hideLoading(context);
           return DialogUtils.showMessage(
               context: context,
+              title: "Success",
               message: "Registered Successfully.",
               posActionName: "Ok");
         }

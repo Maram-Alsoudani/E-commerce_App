@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/domain/entity_models/SignUpResponseEntity.dart';
 
-import '../../domain/failures.dart';
+import '../../../../domain/failures.dart';
 
 abstract class SignUpState {}
 

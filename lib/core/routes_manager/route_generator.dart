@@ -1,11 +1,10 @@
 import 'package:e_commerce_app/core/routes_manager/routes.dart';
+import 'package:e_commerce_app/features/auth/sign_up/sign_up_screen.dart';
 import 'package:e_commerce_app/features/home/home_screen.dart';
-import 'package:e_commerce_app/features/sign_up/sign_up_screen.dart';
 import 'package:e_commerce_app/features/splash/splash_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/sign_in/sign_in_screen.dart';
+import '../../features/auth/sign_in/sign_in_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
