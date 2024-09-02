@@ -1,9 +1,9 @@
-import 'package:e_commerce_app/features/sign_up/sign_up_states.dart';
+import 'package:e_commerce_app/features/auth/sign_up/sign_up_cubit/sign_up_states.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../domain/use_cases/sign_up_use_case.dart';
+import '../../../../domain/use_cases/sign_up_use_case.dart';
 
 @injectable
 class SignUpViewModel extends Cubit<SignUpState> {

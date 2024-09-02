@@ -15,13 +15,13 @@ class ApiManager {
     ),
   );
 
-  Future<Response> getDate(String endPoint,
+  Future<Response> getData(String endPoint,
       {Map<String, dynamic>? queryParameters}) {
     return dio.get("${ApiConstants.baseUrl}$endPoint",
         queryParameters: queryParameters);
   }
 
-  Future<Response> postDate(String endPoint,
+  Future<Response> postData(String endPoint,
       {Map<String, dynamic>? body, Map<String, dynamic>? headers}) {
     return dio.post("${ApiConstants.baseUrl}$endPoint",
         data: body, options: Options(headers: headers));
