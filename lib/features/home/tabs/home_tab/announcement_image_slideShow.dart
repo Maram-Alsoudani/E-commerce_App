@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/home/tabs/home_tab/home_tab_cubit.dart';
+import 'package:e_commerce_app/features/home/tabs/home_tab/cubit/home_tab_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 

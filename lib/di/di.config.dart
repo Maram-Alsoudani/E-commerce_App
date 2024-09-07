@@ -22,12 +22,15 @@ import '../domain/repositories/auth_repository.dart' as _i800;
 import '../domain/repositories/home_repository.dart' as _i424;
 import '../domain/use_cases/get_all_brands_use_case.dart' as _i823;
 import '../domain/use_cases/get_all_categories_use_case.dart' as _i557;
+import '../domain/use_cases/get_all_products_use_case.dart' as _i960;
 import '../domain/use_cases/sign_in_use_case.dart' as _i1069;
 import '../domain/use_cases/sign_up_use_case.dart' as _i857;
 import '../features/auth/sign_in/sign_in_cubit/sign_in_cubit.dart' as _i1011;
 import '../features/auth/sign_in/sign_in_screen.dart' as _i137;
 import '../features/auth/sign_up/sign_up_cubit/sign_up_cubit.dart' as _i32;
-import '../features/home/tabs/home_tab/home_tab_cubit.dart' as _i89;
+import '../features/home/tabs/home_tab/cubit/home_tab_cubit.dart' as _i316;
+import '../features/home/tabs/products_tab/cubit/products_tab_cubit.dart'
+    as _i716;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -56,17 +59,21 @@ extension GetItInjectableX on _i174.GetIt {
         _i1069.SignInUseCase(signInRepository: gh<_i800.AuthRepository>()));
     gh.factory<_i32.SignUpViewModel>(
         () => _i32.SignUpViewModel(signUpUseCase: gh<_i857.SignUpUseCase>()));
+    gh.factory<_i823.GetAllBrandsUseCase>(() =>
+        _i823.GetAllBrandsUseCase(homeRepository: gh<_i424.HomeRepository>()));
     gh.factory<_i557.GetAllCategoriesUseCase>(() =>
         _i557.GetAllCategoriesUseCase(
             homeRepository: gh<_i424.HomeRepository>()));
-    gh.factory<_i823.GetAllBrandsUseCase>(() =>
-        _i823.GetAllBrandsUseCase(homeRepository: gh<_i424.HomeRepository>()));
+    gh.factory<_i960.GetAllProductsUseCase>(() => _i960.GetAllProductsUseCase(
+        homeRepository: gh<_i424.HomeRepository>()));
     gh.factory<_i1011.SignInViewModel>(() =>
         _i1011.SignInViewModel(signInUseCase: gh<_i1069.SignInUseCase>()));
-    gh.factory<_i89.HomeTabViewModel>(() => _i89.HomeTabViewModel(
+    gh.factory<_i316.HomeTabViewModel>(() => _i316.HomeTabViewModel(
           getAllCategoriesUseCase: gh<_i557.GetAllCategoriesUseCase>(),
           getAllBrandsUseCase: gh<_i823.GetAllBrandsUseCase>(),
         ));
+    gh.factory<_i716.ProductsTabViewModel>(() => _i716.ProductsTabViewModel(
+        getAllProductsUseCase: gh<_i960.GetAllProductsUseCase>()));
     return this;
   }
 }
