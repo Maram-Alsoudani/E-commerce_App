@@ -1,0 +1,27 @@
+import 'package:flutter/cupertino.dart';
+
+class CustomGridview extends StatelessWidget {
+  Axis scrollDirection;
+  int itemCount;
+  int crossAxisCount;
+  List<Widget> widgetsList;
+
+  CustomGridview(
+      {required this.scrollDirection,
+      required this.widgetsList,
+      required this.crossAxisCount,
+      required this.itemCount});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        scrollDirection: scrollDirection,
+        itemCount: itemCount,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+        ),
+        itemBuilder: (context, index) {
+          return widgetsList[index];
+        });
+  }
+}
