@@ -12,4 +12,5 @@ abstract class ImageAsset {
   static const String categoryBlue = "$imagePath/BNB_category_blue.png";
   static const String heartBlue = "$imagePath/BNB_heart_blue.png";
   static const String userBlue = "$imagePath/BNB_user_blue.png";
+  static const String announcementImage1 = "$imagePath/announcment_1.png";
 }
