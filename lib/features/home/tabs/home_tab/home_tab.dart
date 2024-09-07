@@ -4,9 +4,9 @@ import 'package:e_commerce_app/core/resources/style_manager.dart';
 import 'package:e_commerce_app/core/widgets/DialogUtils.dart';
 import 'package:e_commerce_app/core/widgets/custom_gridView.dart';
 import 'package:e_commerce_app/features/home/tabs/home_tab/announcement_image_slideShow.dart';
+import 'package:e_commerce_app/features/home/tabs/home_tab/cubit/home_tab_cubit.dart';
+import 'package:e_commerce_app/features/home/tabs/home_tab/cubit/home_tab_states.dart';
 import 'package:e_commerce_app/features/home/tabs/home_tab/custom_category_or_brand_widget.dart';
-import 'package:e_commerce_app/features/home/tabs/home_tab/home_tab_cubit.dart';
-import 'package:e_commerce_app/features/home/tabs/home_tab/home_tab_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

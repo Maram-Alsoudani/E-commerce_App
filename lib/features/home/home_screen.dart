@@ -29,27 +29,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: ColorManager.white,
                 leading: Image.asset(
                   ImageAsset.routeLogoBlue,
-                  height:
-                      kToolbarHeight, // Ensuring the height remains the same
+                  height: kToolbarHeight,
                 ),
                 leadingWidth: 90,
                 floating: true,
                 pinned: false,
                 snap: true,
               ),
-              SliverList(
-                delegate: SliverChildListDelegate(
-                  [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          _buildSearchBar(),
-                          viewModel.tabs[viewModel.currentIndex],
-                        ],
+              SliverFillRemaining(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      _buildSearchBar(),
+                      Expanded(
+                        child: viewModel.tabs[viewModel.currentIndex],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -68,10 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
               border: Border.all(
-                color: ColorManager.primary, // Border color
-                width: 1.5, // Border width
+                color: ColorManager.primary,
+                width: 1.5,
               ),
-              borderRadius: BorderRadius.circular(25.0), // Border radius
+              borderRadius: BorderRadius.circular(25.0),
             ),
             child: Row(
               children: [
@@ -95,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       filled: true,
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
