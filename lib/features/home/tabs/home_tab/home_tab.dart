@@ -34,7 +34,8 @@ class _HomeTabState extends State<HomeTab> {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: AnnouncementImageSlideshow(),
+                child:
+                    Container(height: 200, child: AnnouncementImageSlideshow()),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
