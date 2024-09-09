@@ -29,6 +29,7 @@ class ProductsTab extends StatelessWidget {
                       child: CustomProductWidget(
                         imageUrl: productEntity.imageCover ?? "",
                         productTitle: productEntity.title ?? "",
+                        productDescription: productEntity.description ?? "",
                         price: productEntity.price.toString(),
                         ratingsAverage: productEntity.ratingsAverage.toString(),
                       ),
