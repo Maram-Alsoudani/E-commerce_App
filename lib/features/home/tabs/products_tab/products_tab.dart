@@ -24,15 +24,8 @@ class ProductsTab extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   widgetsList:
                       state.productResponseEntity.data!.map((productEntity) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: CustomProductWidget(
-                        imageUrl: productEntity.imageCover ?? "",
-                        productTitle: productEntity.title ?? "",
-                        productDescription: productEntity.description ?? "",
-                        price: productEntity.price.toString(),
-                        ratingsAverage: productEntity.ratingsAverage.toString(),
-                      ),
+                    return CustomProductWidget(
+                      productEntity: productEntity,
                     );
                   }).toList(),
                   crossAxisCount: 2,

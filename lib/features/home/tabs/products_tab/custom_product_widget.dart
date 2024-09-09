@@ -6,31 +6,33 @@ import 'package:e_commerce_app/core/resources/style_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class CustomProductWidget extends StatelessWidget {
-  String imageUrl;
-  String productTitle;
-  String productDescription;
-  String price;
-  String ratingsAverage;
+import '../../../../core/routes_manager/routes.dart';
+import '../../../../domain/entity_models/ProductResponseEntity.dart';
 
-  CustomProductWidget(
-      {required this.imageUrl,
-      required this.productTitle,
-      required this.productDescription,
-      required this.price,
-      required this.ratingsAverage});
+class CustomProductWidget extends StatelessWidget {
+  ProductEntity productEntity;
+
+  CustomProductWidget({
+    required this.productEntity
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: ColorManager.primary, width: 1.5)),
-      child: Column(
-        children: [
-          Expanded(flex: 1, child: _buildProductImage()),
-          Expanded(flex: 1, child: _buildProductDetails(context)),
-        ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.productDetailsScreenRoute,
+            arguments: productEntity);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: ColorManager.primary, width: 1.5)),
+        child: Column(
+          children: [
+            Expanded(flex: 1, child: _buildProductImage()),
+            Expanded(flex: 1, child: _buildProductDetails(context)),
+          ],
+        ),
       ),
     );
   }
@@ -44,7 +46,7 @@ class CustomProductWidget extends StatelessWidget {
             topLeft: Radius.circular(15),
           ),
           child: CachedNetworkImage(
-            imageUrl: imageUrl,
+            imageUrl: productEntity.imageCover ?? "",
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.fill,
@@ -85,14 +87,14 @@ class CustomProductWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    productTitle,
+                    productEntity.title ?? "",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: getTextStyle(
                         12, FontWeightManager.semiBold, ColorManager.darkBlue),
                   ),
                   Text(
-                    productDescription,
+                    productEntity.description ?? "",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: getTextStyle(
@@ -103,14 +105,14 @@ class CustomProductWidget extends StatelessWidget {
             ),
             Expanded(
                 flex: 1,
-                child: Text("EGP $price",
+                child: Text("EGP ${productEntity.price ?? ""}",
                     style: getTextStyle(
                         14, FontWeightManager.medium, ColorManager.darkBlue))),
             Expanded(
               flex: 1,
               child: Row(children: [
                 Text(
-                  "Review ($ratingsAverage)",
+                  "Review (${productEntity.ratingsAverage ?? ""})",
                   style: getTextStyle(
                       12, FontWeightManager.medium, ColorManager.darkBlue),
                 ),
