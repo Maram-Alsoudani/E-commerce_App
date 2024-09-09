@@ -9,12 +9,14 @@ import 'package:shimmer/shimmer.dart';
 class CustomProductWidget extends StatelessWidget {
   String imageUrl;
   String productTitle;
+  String productDescription;
   String price;
   String ratingsAverage;
 
   CustomProductWidget(
       {required this.imageUrl,
       required this.productTitle,
+      required this.productDescription,
       required this.price,
       required this.ratingsAverage});
 
@@ -79,12 +81,24 @@ class CustomProductWidget extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Text(
-                productTitle,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: getTextStyle(
-                    14, FontWeightManager.semiBold, ColorManager.darkBlue),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    productTitle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: getTextStyle(
+                        12, FontWeightManager.semiBold, ColorManager.darkBlue),
+                  ),
+                  Text(
+                    productDescription,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: getTextStyle(
+                        12, FontWeightManager.semiBold, ColorManager.darkBlue),
+                  ),
+                ],
               ),
             ),
             Expanded(
