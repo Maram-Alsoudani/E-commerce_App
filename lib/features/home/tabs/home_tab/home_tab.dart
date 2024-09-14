@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/resources/font_manager.dart';
 import 'package:e_commerce_app/core/resources/style_manager.dart';
 import 'package:e_commerce_app/core/widgets/DialogUtils.dart';
 import 'package:e_commerce_app/core/widgets/custom_gridView.dart';
+import 'package:e_commerce_app/core/widgets/search_bar_row.dart';
 import 'package:e_commerce_app/features/home/tabs/home_tab/announcement_image_slideShow.dart';
 import 'package:e_commerce_app/features/home/tabs/home_tab/cubit/home_tab_cubit.dart';
 import 'package:e_commerce_app/features/home/tabs/home_tab/cubit/home_tab_states.dart';
@@ -32,6 +33,7 @@ class _HomeTabState extends State<HomeTab> {
         return SingleChildScrollView(
           child: Column(
             children: [
+              SearchBarRow(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child:

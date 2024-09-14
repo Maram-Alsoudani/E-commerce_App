@@ -5,9 +5,11 @@ import 'package:e_commerce_app/core/resources/style_manager.dart';
 import 'package:e_commerce_app/core/widgets/DialogUtils.dart';
 import 'package:e_commerce_app/features/auth/sign_in/sign_in_cubit/sign_in_cubit.dart';
 import 'package:e_commerce_app/features/auth/sign_in/sign_in_cubit/sign_in_states.dart';
+import 'package:e_commerce_app/features/shared_preferences_utils.dart';
 import 'package:flutter/material.dart'; // Import core Flutter libraries first
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/routes_manager/routes.dart';
 import '../../../core/widgets/custom_elevated_button.dart';
@@ -41,6 +43,8 @@ class SignInScreen extends StatelessWidget {
               message: "Login Successfully.",
               posActionName: "Ok",
               posAction: () {
+                SharedPreferencesUtils.saveDate(
+                    key: "token", value: state.signInResponse.token);
                 Navigator.pushNamed(context, Routes.homeScreenRoute);
               },
               title: "Success");
