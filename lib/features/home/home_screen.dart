@@ -41,7 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(10.0),
                   child: Column(
                     children: [
-                      _buildSearchBar(),
                       Expanded(
                         child: viewModel.tabs[viewModel.currentIndex],
                       ),

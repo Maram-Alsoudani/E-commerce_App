@@ -141,9 +141,8 @@ class ProductDetailsScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: _buildReadMoreText(productDescriptionText)),
               SizedBox(
-                height: 30,
+                height: 100,
               ),
-
               //total price and add to cart button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -232,7 +231,7 @@ class ProductDetailsScreen extends StatelessWidget {
 
   Widget _buildAddToCartContainer() {
     return Container(
-      width: 270,
+      width: 230,
       height: 48,
       decoration: BoxDecoration(
           color: ColorManager.primary, borderRadius: BorderRadius.circular(20)),
@@ -256,7 +255,7 @@ class ProductDetailsScreen extends StatelessWidget {
     );
   }
 
-  String formatNumber(num number) {
+  static String formatNumber(num number) {
     final formatter = NumberFormat.decimalPattern();
     return formatter.format(number);
   }

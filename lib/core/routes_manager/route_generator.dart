@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/core/routes_manager/routes.dart';
 import 'package:e_commerce_app/features/auth/sign_up/sign_up_screen.dart';
 import 'package:e_commerce_app/features/home/home_screen.dart';
+import 'package:e_commerce_app/features/home/tabs/products_tab/cart/cart_screen.dart';
 import 'package:e_commerce_app/features/home/tabs/products_tab/product_details_screen.dart';
 import 'package:e_commerce_app/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SignInScreen());
       case Routes.homeScreenRoute:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+      case Routes.cartScreenRoute:
+        return MaterialPageRoute(builder: (_) => CartScreen());
       case Routes.productDetailsScreenRoute:
         final productEntity = settings.arguments as ProductEntity;
         return MaterialPageRoute(
