@@ -1,46 +1,104 @@
-# E-commerce App
+# E-Commerce App
+# Overview
+- A Flutter-based E-Commerce app offering a complete shopping experience with features like user authentication, product browsing, cart management, and favorites. The app follows the MVVM pattern, uses BLoC and Cubit for state management, and integrates clean - 
+-  architecture for scalability and maintainability.
 
-A **Flutter-based mobile application** that allows users to browse and purchase products online with features like shopping cart and secure payment integration.
+# Features
 
-## Key Features
+ 1- Authentication
+- Login and Register: User authentication with email and password via API.
+- Auto-Login: Automatically log in users based on saved credentials for a seamless experience.
 
-- **Product Browsing**: Browse and search for various products.
-- **Shopping Cart**: Add products to the cart for checkout.
-- **Secure Payment**: Integration with secure payment systems.
-- **Auto-login**: Implemented using cached user data for convenience.
+2- API Integration
 
-## Technologies Used
+- Fetch product listings, user profiles, and handle cart operations through a RESTful API.
 
-- **Bloc and Cubit**: For efficient state management.
-- **Clean Architecture with MVVM**: For scalable and maintainable code structure.
-- **Dio**: For handling network requests.
-- **Shared Preferences**: Caching and auto-login functionality.
+3- Favorites Page
 
-## Packages Used
+- Add and remove products from the favorites list, allowing users to create a personal wishlist.
 
-- **flutter_bloc**: State management with Bloc and Cubit.
-- **dartz**: Functional programming in Dart.
-- **dio**: For network requests.
-- **injectable** & **get_it**: For dependency injection.
-- **cached_network_image**: Efficient image loading and caching.
-- **flutter_image_slideshow**: For displaying product images.
-- **connectivity_plus**: For checking network status.
-- **shimmer**: Placeholder effect while data loads.
-- **intl**: Localization and formatting.
-- **readmore**: For expanding text content.
-- **shared_preferences**: Caching user data.
+4- Search Functionality
 
-## Setup Instructions
+5- Search for products within the app, powered by API search queries.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Maram-Alsoudani/E-commerce_App.git
-2. Navigate to the project directory:
-   ```bash
-   cd todo_app
-3. Install the dependencies:
-   ```bash
-   flutter pub get
-4. Run the app:
-   ```bash
-   flutter run
+6- Cart Management
+
+- Add items to the cart, modify quantities, and delete items directly from the cart.
+
+7- Profile Page
+
+- Users can manage and update their personal information and preferences.
+
+8- Image Slideshow
+
+9- View product images in a slideshow on the product details page.
+
+10- Item View Page
+- A detailed view of individual items, including product specifications, pricing, and availability.
+Item Selection Page
+
+11- Choose product variations like size, color, or other options before adding to the cart.
+State Management
+
+12- Utilizes BLoC and Cubit for efficient state management across the app.
+MVVM Pattern
+
+13- The app follows the MVVM (Model-View-ViewModel) design pattern, ensuring a clear separation of logic and UI, making the codebase more maintainable.
+Clean Architecture
+
+14 - Implements Clean Architecture, ensuring the separation of concerns and promoting scalability.
+Shared Preferences
+
+15 - Uses SharedPreferences to store and persist user data like login status and favorites list.
+16- Dio Package
+
+17- Handles API requests using the Dio package for robust communication with the backend.
+
+
+#Installation
+- Clone the repository:
+
+- git clone https://github.com/yourusername/ecommerce-app.git
+Install dependencies:
+
+
+flutter pub get
+Run the app:
+
+- flutter run
+# Technologies Used
+- Flutter: For building the cross-platform app.
+- BLoC and Cubit: For state management.
+- MVVM Pattern: Ensures a structured codebase by separating UI from business logic.
+- Dio: For making HTTP requests to the backend API.
+- SharedPreferences: For storing persistent local data.
+- Image Slideshow: To display product images
+
+
+# ScreenShots
+
+<p align="center">
+  <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/spalsh.png" alt="Sign Up" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/login.png" alt="Sign In" width="220" style="margin: 10px;"/>
+     <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/register.png" alt="Validator dark" width="220" style="margin: 10px;"/>
+</p>
+
+<p align="center">
+     <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/home.png" alt="Task" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/products.png" alt="Task Add" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/products%20detailes.png" alt="Task Delete" width="220" style="margin: 10px;"/>
+
+</p>
+
+<p align="center">
+       <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/cart.png" alt="Edit Task" width="220" style="margin: 10px;"/>
+  <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/favorite%20page.png" alt="Done Task" width="220" style="margin: 10px;"/>
+    <img src="https://github.com/oso020/E-COMMESCE-ROUTE/blob/master/screen%20shots/profile%20page.png" alt="Dialog Dark" width="220" style="margin: 10px;"/>
+</p>
+
+
+=
+# License
+- This project is licensed under the MIT License - see the LICENSE file for details.
+
+- This updated README.md now includes the new features: item view page, item selection page, and auto-login with MVVM.
