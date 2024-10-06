@@ -25,12 +25,14 @@ import '../domain/repositories/auth_repository.dart' as _i800;
 import '../domain/repositories/cart_repository.dart' as _i463;
 import '../domain/repositories/home_repository.dart' as _i424;
 import '../domain/use_cases/add_to_cart_use_case.dart' as _i994;
+import '../domain/use_cases/delete_item_in_cart_use_case.dart' as _i1013;
 import '../domain/use_cases/get_all_brands_use_case.dart' as _i823;
 import '../domain/use_cases/get_all_categories_use_case.dart' as _i557;
 import '../domain/use_cases/get_all_products_use_case.dart' as _i960;
 import '../domain/use_cases/get_cart_use_case.dart' as _i487;
 import '../domain/use_cases/sign_in_use_case.dart' as _i1069;
 import '../domain/use_cases/sign_up_use_case.dart' as _i857;
+import '../domain/use_cases/update_cart_item_count_use_case.dart' as _i411;
 import '../features/auth/sign_in/sign_in_cubit/sign_in_cubit.dart' as _i1011;
 import '../features/auth/sign_in/sign_in_screen.dart' as _i137;
 import '../features/auth/sign_up/sign_up_cubit/sign_up_cubit.dart' as _i32;
@@ -71,8 +73,19 @@ extension GetItInjectableX on _i174.GetIt {
         _i1069.SignInUseCase(signInRepository: gh<_i800.AuthRepository>()));
     gh.factory<_i487.GetCartUseCase>(
         () => _i487.GetCartUseCase(cartRepository: gh<_i463.CartRepository>()));
+    gh.factory<_i1013.DeleteItemInCartUseCase>(() =>
+        _i1013.DeleteItemInCartUseCase(
+            cartRepository: gh<_i463.CartRepository>()));
+    gh.factory<_i411.UpdateCartItemCountUseCase>(() =>
+        _i411.UpdateCartItemCountUseCase(
+            cartRepository: gh<_i463.CartRepository>()));
     gh.factory<_i32.SignUpViewModel>(
         () => _i32.SignUpViewModel(signUpUseCase: gh<_i857.SignUpUseCase>()));
+    gh.factory<_i552.CartScreenViewModel>(() => _i552.CartScreenViewModel(
+          getCartUseCase: gh<_i487.GetCartUseCase>(),
+          deleteItemInCartUseCase: gh<_i1013.DeleteItemInCartUseCase>(),
+          updateCartItemCountUseCase: gh<_i411.UpdateCartItemCountUseCase>(),
+        ));
     gh.factory<_i994.AddToCartUseCase>(() =>
         _i994.AddToCartUseCase(homeRepository: gh<_i424.HomeRepository>()));
     gh.factory<_i823.GetAllBrandsUseCase>(() =>
@@ -84,8 +97,6 @@ extension GetItInjectableX on _i174.GetIt {
         homeRepository: gh<_i424.HomeRepository>()));
     gh.factory<_i1011.SignInViewModel>(() =>
         _i1011.SignInViewModel(signInUseCase: gh<_i1069.SignInUseCase>()));
-    gh.factory<_i552.CartScreenViewModel>(() =>
-        _i552.CartScreenViewModel(getCartUseCase: gh<_i487.GetCartUseCase>()));
     gh.factory<_i716.ProductsTabViewModel>(() => _i716.ProductsTabViewModel(
           getAllProductsUseCase: gh<_i960.GetAllProductsUseCase>(),
           addToCartUseCase: gh<_i994.AddToCartUseCase>(),

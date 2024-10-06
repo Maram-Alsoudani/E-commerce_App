@@ -2,6 +2,7 @@ import 'package:e_commerce_app/core/resources/color_manager.dart';
 import 'package:e_commerce_app/core/resources/font_manager.dart';
 import 'package:e_commerce_app/core/resources/style_manager.dart';
 import 'package:e_commerce_app/domain/entity_models/GetCartResponseEntity.dart';
+import 'package:e_commerce_app/features/home/tabs/products_tab/cart/cubit/cart_screen_cubit.dart';
 import 'package:flutter/material.dart';
 
 class CartItemWidget extends StatelessWidget {
@@ -52,7 +53,10 @@ class CartItemWidget extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            CartScreenViewModel.get(context).deleteItemInCart(
+                                productEntity.product!.id ?? "");
+                          },
                           icon: Icon(
                             Icons.delete_outline,
                             color: Colors.red,
@@ -81,7 +85,13 @@ class CartItemWidget extends StatelessWidget {
                               IconButton(
                                 icon: Icon(Icons.add_circle_outline,
                                     color: ColorManager.white),
-                                onPressed: () {},
+                                onPressed: () {
+                                  int count = productEntity.count!.toInt();
+                                  count++;
+                                  CartScreenViewModel.get(context)
+                                      .updateItemCart(count,
+                                          productEntity.product!.id ?? "");
+                                },
                               ),
                               Text(
                                 "${productEntity.count}",
@@ -91,7 +101,13 @@ class CartItemWidget extends StatelessWidget {
                               IconButton(
                                 icon: Icon(Icons.remove_circle_outline,
                                     color: ColorManager.white),
-                                onPressed: () {},
+                                onPressed: () {
+                                  int count = productEntity.count!.toInt();
+                                  count--;
+                                  CartScreenViewModel.get(context)
+                                      .updateItemCart(count,
+                                          productEntity.product!.id ?? "");
+                                },
                               ),
                             ],
                           ),

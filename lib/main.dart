@@ -20,8 +20,9 @@ void main() async {
   } else {
     route = Routes.homeScreenRoute;
   }
-  runApp(MultiBlocProvider(providers: [
-    BlocProvider(create: (context) => getIt<HomeTabViewModel>()),
+  runApp(MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<HomeTabViewModel>()),
         BlocProvider(create: (context) => getIt<ProductsTabViewModel>()),
         BlocProvider(create: (context) => getIt<CartScreenViewModel>())
       ],
