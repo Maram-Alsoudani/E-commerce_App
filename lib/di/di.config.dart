@@ -71,11 +71,11 @@ extension GetItInjectableX on _i174.GetIt {
         _i857.SignUpUseCase(signUpRepository: gh<_i800.AuthRepository>()));
     gh.factory<_i1069.SignInUseCase>(() =>
         _i1069.SignInUseCase(signInRepository: gh<_i800.AuthRepository>()));
-    gh.factory<_i487.GetCartUseCase>(
-        () => _i487.GetCartUseCase(cartRepository: gh<_i463.CartRepository>()));
     gh.factory<_i1013.DeleteItemInCartUseCase>(() =>
         _i1013.DeleteItemInCartUseCase(
             cartRepository: gh<_i463.CartRepository>()));
+    gh.factory<_i487.GetCartUseCase>(
+        () => _i487.GetCartUseCase(cartRepository: gh<_i463.CartRepository>()));
     gh.factory<_i411.UpdateCartItemCountUseCase>(() =>
         _i411.UpdateCartItemCountUseCase(
             cartRepository: gh<_i463.CartRepository>()));
