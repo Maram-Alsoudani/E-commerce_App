@@ -26,4 +26,16 @@ class ApiManager {
     return dio.post("${ApiConstants.baseUrl}$endPoint",
         data: body, options: Options(headers: headers));
   }
+
+  Future<Response> deleteData(String endPoint,
+      {Map<String, dynamic>? body, Map<String, dynamic>? headers}) {
+    return dio.delete("${ApiConstants.baseUrl}$endPoint",
+        data: body, options: Options(headers: headers));
+  }
+
+  Future<Response> updateData(String endPoint,
+      {Map<String, dynamic>? body, Map<String, dynamic>? headers}) {
+    return dio.put("${ApiConstants.baseUrl}$endPoint",
+        data: body, options: Options(headers: headers));
+  }
 }

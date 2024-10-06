@@ -18,3 +18,19 @@ class SuccessCartScreenState extends CartScreenState {
 
   SuccessCartScreenState({required this.getCartResponseEntity});
 }
+
+class InitialDeleteCartItemState extends CartScreenState {}
+
+class LoadingDeleteCartItemState extends CartScreenState {}
+
+class ErrorDeleteCartItemState extends CartScreenState {
+  Failure failure;
+
+  ErrorDeleteCartItemState({required this.failure});
+}
+
+class SuccessDeleteCartItemState extends CartScreenState {
+  GetCartResponseEntity getCartResponseEntity;
+
+  SuccessDeleteCartItemState({required this.getCartResponseEntity});
+}
